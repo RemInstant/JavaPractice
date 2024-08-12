@@ -2,7 +2,6 @@ package remi.github.observe;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -48,6 +47,11 @@ public class HttpConGithubObserver extends GithubObserver
             
             for (var elem : pairs) {
                 String[] keyVal = elem.split( "\":");
+                
+                if (keyVal[1].startsWith("\"") && keyVal[1].endsWith("\"")) {
+                    keyVal[1] = keyVal[1].substring(1, keyVal[1].length() - 1);
+                }
+                
                 map.put(keyVal[0], keyVal[1]);
             }
         }

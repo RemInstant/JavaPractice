@@ -24,11 +24,6 @@ public abstract class GithubObserver
         String createdAt = map.get("created_at");
         String updatedAt = map.get("updated_at");
         
-        login = login.substring(1, login.length() - 1);
-        name = name.substring(1, name.length() - 1);
-        createdAt = createdAt.substring(1, createdAt.length() - 1);
-        updatedAt = updatedAt.substring(1, updatedAt.length() - 1);
-        
         return new GithubUser(id, login, name, publicRepos, createdAt, updatedAt);
     }
     

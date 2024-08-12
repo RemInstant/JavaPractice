@@ -8,7 +8,8 @@ public class App
     public static void main(String[] args)
         throws Exception
     {
-        GithubObserver obs = new HttpConGithubObserver();
+        //GithubObserver obs = new HttpConGithubObserver();
+        GithubObserver obs = new HttpClientGithubObserver();
         
         GithubUser user = obs.getUserInfo("reminstant");
         
